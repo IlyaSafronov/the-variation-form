@@ -56,7 +56,8 @@ input {
   margin: 2rem 0 4rem;
 }
 
-.progressbar::before, .progress {
+.progressbar::before, 
+.progress {
   content: '';
   position: absolute;
   top: 50%;
@@ -70,6 +71,7 @@ input {
 .progress {
   background-color: var(--primary-color);
   width: 0%;
+  transition: 0.3s;
 }
 
 .progress-step {
@@ -100,7 +102,6 @@ input {
   color: #fff;
 }
 
-
 /* ! Form */
 .form {
   width: clamp(320px, 30px, 430px);
@@ -112,6 +113,8 @@ input {
 
 .form-step {
   display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
 }
 
 .form-step-active {
@@ -120,6 +123,17 @@ input {
 
 .input-group {
   margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
 }
 
 /* ! Button */
